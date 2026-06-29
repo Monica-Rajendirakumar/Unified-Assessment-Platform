@@ -50,7 +50,8 @@ export default function AuthPage() {
       setErrorMsg('');
       try {
         const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
-        const res = await axios.post(`http://localhost:5000${endpoint}`, values);
+        const API_URL = "https://uap-backend-32ar.onrender.com";
+        const res = await axios.post(`${API_URL}${endpoint}`, values);
         
         // Save token using Context
         login(res.data.token);
